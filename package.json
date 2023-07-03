@@ -1,0 +1,37 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "simple webpack build",
+  "private": "true",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LayMorja/webpack-test.git"
+  },
+  "keywords": [
+    "javascript",
+    "webpack"
+  ],
+  "author": "lay_morja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LayMorja/webpack-test/issues"
+  },
+  "homepage": "https://github.com/LayMorja/webpack-test#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
