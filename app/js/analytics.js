@@ -1,4 +1,4 @@
-export const getViews = function () {
+const getAnalytics = function () {
   let counter = 0;
   let isDestroyed = false;
 
@@ -22,3 +22,5 @@ export const getViews = function () {
     },
   };
 };
+
+window.analytics = getAnalytics;

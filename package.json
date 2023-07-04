@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "simple webpack build",
   "private": "true",
+  "type": "module",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
@@ -25,7 +26,9 @@
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
+    "del": "^7.0.0",
     "file-loader": "^6.2.0",
+    "gulp": "^4.0.2",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",

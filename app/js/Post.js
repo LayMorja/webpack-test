@@ -1,4 +1,4 @@
-class Post {
+export default class Post {
   constructor(title, image) {
     (this.title = title), (this.image = image), (this.datetime = new Date());
   }
@@ -11,5 +11,3 @@ class Post {
     });
   }
 }
-
-export default Post;
