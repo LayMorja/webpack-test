@@ -1,19 +1,19 @@
 import gulp from 'gulp';
-import { path } from "./config/gulp-settings.js";
-import { plugins } from "./config/gulp-plugins.js";
+import { plugins } from './config/gulp-plugins.js';
+import { path } from './config/gulp-settings.js';
 
 global.app = {
-    isBuild: process.argv.includes('--build'),
-    isDev: !process.argv.includes('--build'),
-    isFonts: process.argv.includes('--fonts'),
-    imagesBuild: process.argv.includes('--images'),
-    gulp,
-    path,
-    plugins,
-}
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
+  isFonts: process.argv.includes('--fonts'),
+  imagesBuild: process.argv.includes('--images'),
+  gulp,
+  path,
+  plugins,
+};
 
-import { reset } from "./config/gulp-tasks/reset.js";
-import { html } from "./config/gulp-tasks/html.js";
+import { css } from './config/gulp-tasks/css.js';
+import { html } from './config/gulp-tasks/html.js';
+import { reset } from './config/gulp-tasks/reset.js';
 
-export { reset };
-export { html };
+export { css, html, reset };
