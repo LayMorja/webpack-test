@@ -5,7 +5,7 @@ const appFolder = './app';
 const distFolder = './dist';
 
 export const path = {
-    dist: {
+    build: {
         html: distFolder + '/',
         js: distFolder + '/js/',
         styles: distFolder + '/styles/',
@@ -13,7 +13,7 @@ export const path = {
         fonts: distFolder + '/fonts/',
         assets: distFolder + '/assets/',
     },
-    app: {
+    src: {
         html: appFolder + '/*.html',
         js: appFolder + '/js/index.js',
         styles: appFolder + '/styles/*.scss',
