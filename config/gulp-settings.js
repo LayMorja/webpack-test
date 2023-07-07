@@ -1,35 +1,37 @@
 import * as nodePath from 'path';
 
 const rootFolder = nodePath.basename(nodePath.resolve());
-const appFolder = './app';
-const distFolder = './dist';
+const srcFolder = './app';
+const buildFolder = './public';
 
 export const path = {
   build: {
-    html: distFolder + '/',
-    js: distFolder + '/js/',
-    styles: distFolder + '/styles/',
-    images: distFolder + '/img/',
-    fonts: distFolder + '/fonts/',
-    assets: distFolder + '/assets/',
+    html: buildFolder + '/',
+    js: buildFolder + '/js/',
+    styles: buildFolder + '/styles/',
+    images: buildFolder + '/img/',
+    fonts: buildFolder + '/fonts/',
+    assets: buildFolder + '/assets/',
   },
   src: {
-    html: appFolder + '/*.html',
-    js: appFolder + '/js/index.js',
-    styles: appFolder + '/styles/*.scss',
+    html: srcFolder + '/*.html',
+    js: srcFolder + '/js/index.js',
+    styles: srcFolder + '/styles/*.scss',
     images: [
-      appFolder + '/img/**/*.{jpg,jpeg,png,gif,webp}',
-      appFolder + '/temp/**/*.{jpg,jpeg,png,gif,webp}',
+      srcFolder + '/img/**/*.{jpg,jpeg,png,gif,webp}',
+      srcFolder + '/temp/**/*.{jpg,jpeg,png,gif,webp}',
     ],
-    fonts: appFolder + '/fonts/*.*',
-    assets: appFolder + '/assets/**.*',
-    svg: appFolder + '/img/svg/*.svg',
+    fonts: srcFolder + '/fonts/*.*',
+    assets: srcFolder + '/assets/**.*',
+    svg: srcFolder + '/img/svg/*.svg',
+    svgicons: srcFolder + '/img/icons/*.svg',
+    files: srcFolder + '/files/**/*.*',
   },
-  clean: distFolder,
-  distFolder,
-  appFolder,
+  clean: buildFolder,
+  buildFolder,
+  srcFolder,
   rootFolder,
-  zip: distFolder + '/**/*.*',
+  zip: buildFolder + '/**/*.*',
   ftp: './www/laymorja.ru/',
 };
 

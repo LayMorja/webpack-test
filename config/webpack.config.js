@@ -1,15 +1,10 @@
-// import path from 'path';
-// import * as path from 'path';
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import * as nodePath from 'path';
 
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
-
-const appFolder = path.resolve(__dirname, 'app');
-const distFolder = path.resolve(__dirname, 'dist');
-const rootFolder = path.basename(path.resolve(__dirname));
+const appFolder = nodePath.resolve(__dirname, 'app');
+const distFolder = nodePath.resolve(__dirname, 'public');
+const rootFolder = nodePath.basename(nodePath.resolve(__dirname));
 
 module.exports = {
   entry: {
@@ -26,7 +21,7 @@ module.exports = {
   },
   context: appFolder,
   plugins: [
-    new HTMLWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: `${appFolder}/index.html`,
     }),
     new MiniCssExtractPlugin({
@@ -38,11 +33,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.(png|jpeg|jpg|gif)$/,
-        // use: ['file-loader']
-        type: 'asset/resource',
       },
     ],
   },

@@ -44,7 +44,7 @@ export const ttfToWoff = () => {
 };
 
 export const fontStyle = () => {
-  let fontsFile = `${app.path.appFolder}/styles/fonts/fonts.scss`;
+  let fontsFile = `${app.path.srcFolder}/styles/fonts/fonts.scss`;
   app.isRewrite ? fs.unlink(fontsFile, cb) : null;
   fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
     if (fontsFiles) {
@@ -95,6 +95,6 @@ export const fontStyle = () => {
       fs.unlink(fontsFile, cb);
     }
   });
-  return app.gulp.src(`${app.path.appFolder}`);
+  return app.gulp.src(`${app.path.srcFolder}`);
 };
 function cb() {}
