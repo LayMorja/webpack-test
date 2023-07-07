@@ -13,5 +13,7 @@ global.app = {
 }
 
 import { reset } from "./config/gulp-tasks/reset.js";
+import { html } from "./config/gulp-tasks/html.js";
 
 export { reset };
+export { html };
