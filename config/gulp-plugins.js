@@ -1,6 +1,7 @@
 import gulpIf from 'gulp-if';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
 import replace from 'gulp-replace';
 
 export const plugins = {
@@ -8,4 +9,5 @@ export const plugins = {
   plumber,
   if: gulpIf,
   replace,
+  rename,
 };

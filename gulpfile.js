@@ -13,7 +13,15 @@ global.app = {
 };
 
 import { css } from './config/gulp-tasks/css.js';
+import { fontStyle, otfToTtf, ttfToWoff } from './config/gulp-tasks/fonts.js';
+import { deploy } from './config/gulp-tasks/ftp.js';
 import { html } from './config/gulp-tasks/html.js';
 import { reset } from './config/gulp-tasks/reset.js';
+import { zip } from './config/gulp-tasks/zip.js';
 
-export { css, html, reset };
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
+const devTasks = gulp.series(fonts, gulp.parallel(html, css));
+
+export const dev = gulp.series(reset, devTasks);
+
+export { css, html, reset, otfToTtf, ttfToWoff, fontStyle, deploy, zip };

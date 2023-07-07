@@ -29,6 +29,11 @@ export const html = function () {
         },
       })
     )
+    .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    .pipe(app.plugins.replace(/@resources\//g, '/'))
+    .pipe(app.plugins.replace(/@temp\//g, 'temp/'))
+    .pipe(app.plugins.replace('NEW_PROJECT_NAME', `${app.path.rootFolder}`))
+
     .pipe(
       typography({
         locale: ['ru', 'en-US'],
